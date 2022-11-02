@@ -11,13 +11,13 @@ document.querySelector('button').addEventListener('click', getColorScheme)
 
 // the function will fetch the colors api
 // and it will display the the color scheme
-// in the 'color-palette dive' 
+// in the 'color-palette div' 
 function getColorScheme() {
-    fetch(`https://www.thecolorapi.com/scheme?hex${seedColor.value.slice(1)}&mode=${mode.value}&count=${count}`)
+    fetch(`https://www.thecolorapi.com/scheme?hex=${seedColor.value.slice(1)}&mode=${mode.value}&count=${count}`)
         .then((res) => res.json())
         .then((newColor) => {
-            let html = '' // need these both set to empty strings so they can be populated below
-            let codes = ''
+            let html = "" // need these both set to empty strings so they can be populated below
+            let codes = ""
             for(let i = 0; i < 5; i++) {
                 html += `
                     <div id="colorColumn" class="colorPalette column" style="background-color: ${newColor.colors[i].hex.value}" title=${newColor.colors[i].hex.value}>
@@ -29,9 +29,12 @@ function getColorScheme() {
                 <div><p>${newColor.colors[i].hex.value}</p></div>
             `            
         }
-
+        //inject color palette into html to display
         colorPalette.innerHTML = html
+
+        //inject hex values for html to display
         hexValues.innerHTML = codes 
+
     })
 
 }
@@ -39,23 +42,5 @@ function getColorScheme() {
 getColorScheme()
 
 
-
-
-
-
-// document.querySelector('button').addEventListener('click', function(){
-//     // console.log("batch")
-//     fetch('https://www.thecolorapi.com/scheme?hex=0047AB&rgb=0,71,171&hsl=215,100%,34%&cmyk=100,58,0,33&format=html&mode=analogic&count=6')
-//     .then((res) => res.json())
-//     .then(data => console.log(data))
-// })
-
-// const colors = {
-//     method: "GET",
-//     body: JSON.stringify(data),
-//     headers: {
-//         "Content-Type": "application/json"
-//     }
-// }
 
 
