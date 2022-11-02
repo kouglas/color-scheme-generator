@@ -4,15 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="styles.css">
     <title>Pretty Color Scheme Generator</title>
 </head>
 <body>
-    <head></head>
-    <main></main>
-    <footer></footer>
+    <head>
+        <nav>
+            <div id="header">
 
+                 <input id="seedColor" type="color">
+                <!-- so can this just be populated by the api? -->
+                <!-- for now just gonna wrap it in a label  -->
+                <div class="select-container">
+                    <!-- <label>Select A Color Scheme</label> -->
+                    <select id="mode">
+                       <option value="monochrome">Monochrome</option>
+                       <option value="monochrome-dark">Monochrome Dark</option>
+                       <option value="monochrome-light">Monochrome Light</option>
+                       <option value="analogic">Analogic</option>
+                       <option value="complement">Complement</option>
+                       <option value="analogic-complement">Analogic Complement</option>
+                       <option value="triad">Triad</option>
+                       <option value="Quad">Quad</option>
+                    </select>
+                </div>
+                <button id="btn">Get Pretty Color Scheme</button>
+            </div>
+        </nav>
+    </head>
 
+        <div id="colors" class="colorPalette"></div>
+        <div id="hexValues"></div>
 
-    
+    <script src="script.js"></script>
 </body>
 </html>
