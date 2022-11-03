@@ -4,7 +4,10 @@ html, body {
     box-sizing: border-box;
     max-width: 80%;
     font-family: 'Inter', sans-serif;
-
+}
+body {
+    border: 2px solid black;
+    border-radius: 6px;
 }
 
 /* layout */
@@ -15,14 +18,14 @@ html, body {
 }
 
 nav {
-    margin-top: 1.5%;
+    margin: 1.5%;
 }
 input {
     margin-top: .5%;
     height: 42px;
     border: 1px solid grey;
 }
-
+/* select element */
 select {
     width: 99%;
     background-color: transparent;
@@ -45,36 +48,11 @@ select {
 }
 
 label {
-    /* border: 1px solid red; */
     margin-top: 4%;
 }
 
-#colors {
-    display: flex;
-    width: 100%;
-    height: 400px;
-}
-.colorPalette {
-    width: inherit;
-}
-
-.column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-
-#hexValues {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 69px;
-}
 
 /* button */
-
 button {
     background-color: #fff;
     border: 1px solid #D1D5DB;
@@ -92,9 +70,26 @@ input, select, button {
 }
 
 /* color display */
-
-#color-palette {
+#colors {
+    border: 1px solid red;
     display: flex;
-    /* justify-content: center; use this one  */
-    /* align-content: center; */
+    width: 100%;
+    height: 400px;
+}
+.colorPalette {
+    width: inherit;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#hexValues {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 69px;
 }
